@@ -1,0 +1,3 @@
+#default: --format pretty
+
+api: -t @api -p html report name=api

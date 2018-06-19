@@ -1,0 +1,7 @@
+require 'colorize'
+require 'selenium-webdriver'
+require 'rubygems'
+require 'httparty'
+require_relative '../pages/apiCalls'
+require_relative '../pages/classAPI'
+require_relative '../pages/oldClass'

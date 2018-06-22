@@ -3,70 +3,37 @@ Given (/^a precondition step$/) do
   line
 
 
+  base_url          =  "http://181.209.76.233/api"
+  bodyUsername      =  "DJirzJmecX4rhBQa38DgG2HHtnHxfPxQ"
+  bodyPassword      =  "5jUcfWGpTi8M5MzYNW2sp9WNC8FuiUiv"
+  headerContentType =  "application/x-www-form-urlencoded"
 
 
 
-  BaseController = BaseController.new
-  response = BaseController.getToken
+  base_api = BaseControllerNotificacionesQA.new
+  token = base_api.getToken(bodyUsername,bodyPassword, headerContentType)
+  user   =  base_api.getUser(token, headerContentType)
+  status = base_api.getStatus(bodyUsername,bodyPassword, headerContentType)
+
+
   line
   puts "GETOKEN::".red
-  puts response
+  line
+  puts token
   line
 
+  line
+  puts "STATUS::".red
+  line
+  puts status
+  line
 
+  line
   puts "GETUSER::".red
-  response2 = BaseController.getUser
   line
-  puts response2
+  puts JSON.pretty_generate(user)
+
   line
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

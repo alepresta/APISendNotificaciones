@@ -4,20 +4,20 @@ Given (/^a precondition step$/) do
 
 
   base_url          =  "http://181.209.76.233/api"
-  bodyUsername      =  "DJirzJmecX4rhBQa38DgG2HHtnHxfPxQ"
-  bodyPassword      =  "5jUcfWGpTi8M5MzYNW2sp9WNC8FuiUiv"
+  bodyUsername      =  "apresta"
+  bodyPassword      =  "IBl@pyWolZ835nav"
   headerContentType =  "application/x-www-form-urlencoded"
 
 
 
   base_api = BaseControllerNotificacionesQA.new
   token = base_api.getToken(bodyUsername,bodyPassword, headerContentType)
-  user   =  base_api.getUser(token, headerContentType)
-  status = base_api.getStatus(bodyUsername,bodyPassword, headerContentType)
-
+  # user   =  base_api.getUser(token, headerContentType)
+  # status = base_api.getStatus(bodyUsername,bodyPassword, headerContentType)
+  notification = base_api.getNotification(token, headerContentType )
 
   line
-  puts "GETOKEN::".red
+  puts "GET TOKEN::".red
   line
   puts token
   line
@@ -25,13 +25,13 @@ Given (/^a precondition step$/) do
   line
   puts "STATUS::".red
   line
-  puts status
+  #puts status
   line
 
   line
-  puts "GETUSER::".red
+  puts "GET Notification::".red
   line
-  puts JSON.pretty_generate(user)
+ # puts JSON.pretty_generate(user)
 
   line
 

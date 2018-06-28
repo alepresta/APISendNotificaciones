@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   end
 
   def contactos
-    email = "alsdkf@gmail.com"
+    @email = "alsdkf@gmail.com"
   end
 
 end
